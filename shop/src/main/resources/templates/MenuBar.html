@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="../static/css/index.css">
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript" src="../static/js/index.js"></script>
+<div th:fragment="Bar">
+	    <table>
+        <tr>
+            <td class="title" align="center" colspan="3">
+                <a href="index.html">dd</a>
+            </td>
+            <td name="login" align="center" rowspan="2">
+                <a href="login">로그인</a>
+            </td>
+        </tr>
+        <tr class="menuTable">
+            <td>
+                <div class="menu">
+                    <span>완제품</span>
+                    <ul class="sub">
+                        <li>
+                            <a href="#None">셀러드</a>
+                        </li>
+                        <li>
+                            <a href="#None">포케</a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="menu">
+                    <span>커스텀</span>
+                    <ul class="sub">
+                        <li>
+                            <a href="#None">셀러드</a>
+                        </li>
+                        <li>
+                            <a href="#None">포케</a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="menu">
+                    <span>리뷰</span>
+                    <ul class="sub">
+                        <li>
+                            <a href="#None">리뷰</a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        var height = true;
+        
+        $(".menuTable").mouseenter(() =>{
+            $(".sub").slideDown();
+            height=!height;
+        });
+		if(height){
+        $(".menuTable").mouseleave(() => {
+            // .sub를 슬라이드 업
+            $(".sub").slideUp();
+        })
+        };
+    </script>
+</div>
