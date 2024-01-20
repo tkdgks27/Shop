@@ -14,7 +14,7 @@ build/
 .springBeans
 .sts4-cache
 bin/
-application.properties
+application-ignore.properties
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 

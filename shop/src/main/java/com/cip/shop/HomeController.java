@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServletRequest;
 @Controller
 public class HomeController {
 
-
 	@GetMapping("/")
 	public String indexPage(HttpServletRequest req) {
 		req.setAttribute("menuBar", "menuBar");
