@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<link rel="stylesheet" href="../static/css/index.css">
-<script type="text/javascript" src="../static/js/jquery.js"></script>
-<script type="text/javascript" src="../static/js/index.js"></script>
+<th:block th:fragment="barCSS">
+	<link rel="stylesheet" type="text/css" href="/css/index.css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+</th:block>
 <div th:fragment="Bar">
-	    <table>
+	    <table class="MenuBar">
         <tr>
             <td class="title" align="center" colspan="3">
-                <a href="index.html">dd</a>
+                <a th:href="@{/}">HomePage</a>
             </td>
-            <td name="login" align="center" rowspan="2">
-                <a href="login">로그인</a>
+            <td class="login" rowspan="2">
+                <a th:href="@{/login}">로그인</a>
             </td>
         </tr>
         <tr class="menuTable">
@@ -54,17 +55,12 @@
 
     </table>
     <script>
-        var height = true;
-        
         $(".menuTable").mouseenter(() =>{
             $(".sub").slideDown();
-            height=!height;
         });
-		if(height){
         $(".menuTable").mouseleave(() => {
             // .sub를 슬라이드 업
             $(".sub").slideUp();
-        })
-        };
+        });
     </script>
 </div>

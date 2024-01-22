@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Home</title>
-<link rel="stylesheet" href="../static/css/index.css">
-<script type="text/javascript" src="../static/js/jquery.js"></script>
-<script type="text/javascript" src="../static/js/index.js"></script>
+<th:block th:insert="~{${menuBar} :: barCSS}"></th:block>
 </head>
 <body>
-	<div th:insert="~{${menuBar}}"></div>
+	<div th:insert="~{${menuBar} :: Bar}"></div>
 </body>
 </html>
