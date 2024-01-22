@@ -12,7 +12,11 @@
             </td>
             <td class="login" rowspan="2">
                 <a th:href="@{/login}">로그인</a>
+                
             </td>
+            <td>
+				<a th:href="@{/join}">회원가입</a>
+			</td>
         </tr>
         <tr class="menuTable">
             <td>
@@ -56,11 +60,11 @@
     </table>
     <script>
         $(".menuTable").mouseenter(() =>{
-            $(".sub").slideDown();
+            $(".sub").slideDown(50);
         });
         $(".menuTable").mouseleave(() => {
             // .sub를 슬라이드 업
-            $(".sub").slideUp();
+            $(".sub").slideUp(50);
         });
     </script>
 </div>
