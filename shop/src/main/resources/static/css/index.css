@@ -2,39 +2,32 @@
 body{
 	background-color:#ffffff;
 }
-.MenuBar *{
-  padding:0%;
-  margin:0%;
-  height: auto;
-  justify-content: center;
-  align-items: center;
-}
-.login{
-	font-size: 20px;
-	position: static;
+#titleArea *{
+  padding:0px;
+  margin:0px;
 }
 a{
 	text-decoration: none;
 }
 .title{
 	background-color:#066754;
-	width: 100%;
 	height: 80px;
-	font-size: 50px;
-	margin-left:35%;
-	
+	font-size: 10px;
 }
-.title>a{
+#titleArea{
+	position: fixed;
+	width:100%;
+}
+#titleArea table{
+	width:1200px;
+}
+
+.title a{
 	color:#F29829;
 }
 .menuTable{
-    border-collapse: collapse;
-	border-spacing:0;
-}
-.menu{
   width:100%;
   height:40px;
-  text-align:center;
   line-height: 40px;
   background-color:#e3fbfd;
   font-size: 20px;
@@ -42,14 +35,16 @@ a{
   opacity: 0.5;
   transition: 0.3s;
 }
-
+.menu{
+	width:20%;
+}
 .menu>a *{
 	color: #BF8D30;
 }
 
 .menu>.sub{
   display:none;
-  height:120px;
+  height:100px;
   list-style:none;
   overflow:hidden;
 }
@@ -63,10 +58,13 @@ a{
 }
 .title a:hover {
 	color:white;
+	display: inline;
 }
-
-a:hover{
+.sub a:hover{
 	color:aqua;
+}
+.menu:hover{
+	color:black;
 }
 button:hover{
 	color:aqua
@@ -77,4 +75,7 @@ input::placeholder{
 }
 input:focus::placeholder{
     color:transparent;
+}
+#result{
+	margin-left:1000px;
 }

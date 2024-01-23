@@ -1,45 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="/css/join.css">
+	<th:block th:insert="~{${menuBar} :: barCSS}"></th:block>
 </head>
+
 <body>
-	<form action="join" method="post" enctype="multipart/form-data" onsubmit="">
-		<table id="joinTable">
-			<tr>
-				<td>
-					<input name="shop_id" maxlength="15" autocomplete="off" placeholder="ID">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input name="shop_pw" type="password" maxlength="20" autocomplete="off" placeholder="Pw">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input name="shop_pwCheck" type="password" maxlength="20" autocomplete="off" placeholder="PwCheck">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input name="shop_nickName" maxlength="10" autocomplete="off" placeholder="nickName">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input name="shop_address1" placeholder="postNum"> <br>
-					<input name="shop_address2" placeholder="address"> <br>
-					<input name="shop_address3" placeholder="detailAdress">
-				</td>
-			</tr>
-			<tr>
-				<td align="center">
-					<button>회원가입</button>
-				</td>
-		</table>
-	</form>
+	<div th:insert="~{${menuBar} :: Bar}"></div><br>
+	<div id="joinForm">
+		<form action="join" method="post" enctype="multipart/form-data" onsubmit="">
+			<h1>회원가입</h1>
+			<input name="shop_id" maxlength="15" autocomplete="off" placeholder="ID"><p></p>
+			<input name="shop_pw" type="password" maxlength="20" autocomplete="off" placeholder="Pw"><p></p>
+			<input name="shop_pwCheck" type="password" maxlength="20" autocomplete="off" placeholder="PwCheck"><p></p>
+			<input name="shop_nickName" maxlength="10" autocomplete="off" placeholder="nickName"><p></p>
+			<input name="shop_address1" placeholder="postNum"><p></p> 
+			<input name="shop_address2" placeholder="address"> <p></p>
+			<input name="shop_address3" placeholder="detailAdress"><p></p>
+			<button style="border:none;">회원가입</button>
+		</form>
+	</div>
 
 </body>
+
 </html>

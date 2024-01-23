@@ -1,70 +1,68 @@
 <!DOCTYPE html>
 <th:block th:fragment="barCSS">
 	<link rel="stylesheet" type="text/css" href="/css/index.css">
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
+	<script type="text/javascript" src="/js/jquery.js"></script>
 </th:block>
 <div th:fragment="Bar">
-	    <table class="MenuBar">
-        <tr>
-            <td class="title" align="center" colspan="3">
-                <a th:href="@{/}">HomePage</a>
-            </td>
-            <td class="login" rowspan="2">
-                <a th:href="@{/login}">로그인</a>
-                
-            </td>
-            <td>
-				<a th:href="@{/join}">회원가입</a>
+	<table id="titleArea">
+		<tr>
+			<td align="center">
+				<table class="title">
+					<tr>
+						<td>
+							<a th:href="@{/}">Home</a>
+							<div id="result" th:insert="~{${result} :: logined}"></div>
+						</td>
+					</tr>
+				</table>
 			</td>
-        </tr>
-        <tr class="menuTable">
-            <td>
-                <div class="menu">
-                    <span>완제품</span>
-                    <ul class="sub">
-                        <li>
-                            <a href="#None">셀러드</a>
-                        </li>
-                        <li>
-                            <a href="#None">포케</a>
-                        </li>
-                    </ul>
-                </div>
-            </td>
-            <td>
-                <div class="menu">
-                    <span>커스텀</span>
-                    <ul class="sub">
-                        <li>
-                            <a href="#None">셀러드</a>
-                        </li>
-                        <li>
-                            <a href="#None">포케</a>
-                        </li>
-                    </ul>
-                </div>
-            </td>
-            <td>
-                <div class="menu">
-                    <span>리뷰</span>
-                    <ul class="sub">
-                        <li>
-                            <a href="#None">리뷰</a>
-                        </li>
-                    </ul>
-                </div>
-            </td>
-        </tr>
-
-    </table>
-    <script>
-        $(".menuTable").mouseenter(() =>{
-            $(".sub").slideDown(50);
-        });
-        $(".menuTable").mouseleave(() => {
-            // .sub를 슬라이드 업
-            $(".sub").slideUp(50);
-        });
-    </script>
+		</tr>
+		<tr>
+			<td align="center">
+				<table>
+					<tr class="menuTable" align="center">
+						<td class="menu">
+							<span>완제품</span>
+							<ul class="sub">
+								<li>
+									<a href="#None">셀러드</a>
+								</li>
+								<li>
+									<a href="#None">포케</a>
+								</li>
+							</ul>
+						</td>
+						<td class="menu">
+							<span>커스텀</span>
+							<ul class="sub">
+								<li>
+									<a href="#None">셀러드</a>
+								</li>
+								<li>
+									<a href="#None">포케</a>
+								</li>
+							</ul>
+						</td>
+						<td class="menu">
+							<span>리뷰</span>
+							<ul class="sub">
+								<li>
+									<a href="#None">리뷰</a>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+</table>
+<script>
+	$(".menuTable").click(() => {
+		$(".sub").slideDown(50);
+	});
+	$(".menuTable").mouseleave(() => {
+		// .sub를 슬라이드 업
+		$(".sub").slideUp(50);
+	});
+</script>
 </div>

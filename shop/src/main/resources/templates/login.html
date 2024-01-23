@@ -5,28 +5,34 @@
 <title>Home</title>
 <link rel="stylesheet" type="text/css" href="/css/login.css">
 <th:block th:insert="~{${menuBar} :: barCSS}"></th:block>
-<script type="text/javascript" src="/js/login.js"></script>
 </head>
 <body>
-	<div th:insert="~{${menuBar} :: Bar}"></div>
-	<form class="loginForm" action="signin" onsubmit="return loginCheck();" method="post">
-		<table class="loginTable">
-			<tr>
-				<td>
-					<input name="shop_id" type="text" style="width:300px;height:30px;font-size:20px;" id="userId" placeholder="ID">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input name="shop_pw" type="password" style="width:300px;height:30px;font-size:20px;" id="userPassword" placeholder="Password">
-				</td>
-			</tr>
-			<tr>
-				<td align="center">
-					<button class="loginButton">로그인</button>
-				</td>
-			</tr>
-		</table>
-	</form>
+	<div th:insert="~{${menuBar} :: Bar}"></div><br>
+	<div id="content">
+		<form th:action="@{/signin}" method="post" onsubmit="return check()">
+			<label for="shop_id">회원아이디</label>
+			<input type="text" autocomplete="off" name="shop_id" id="shop_id" style="width:300px;height:30px;font-size:20px;" placeholder="ID"><br>
+			<label for="shop_pw">비밀번호</label>
+			<input type="password" autocomplete="off" name="shop_pw" id="shop_pw" style="width:300px;height:30px;font-size:20px;" placeholder="PW"><br><br>
+			<input name="button" type="submit" value="로그인" style="width:300px;height:40px;border:none;background-color: darkcyan;">
+		</form>
+	</div>
+	<script>
+		function check(){
+			const username = document.getElementById('shop_id').value;
+			const password = document.getElementById('shop_pw').value;
+			if(username.length == 0 || password.length == 0){
+				alert('모든 항목을 입력해주세요.');
+				return false;
+			}
+			return true;
+		}
+	</script>
+	<style>
+    input[name="button"]:hover {
+        color: #fff; /* hover 상태일 때의 글자색 */
+        cursor: pointer; /* 마우스가 올라갔을 때 커서 모양 변경 */
+    }
+</style>
 </body>
 </html>
