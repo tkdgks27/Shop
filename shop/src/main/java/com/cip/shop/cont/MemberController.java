@@ -15,12 +15,7 @@ public class MemberController {
 		return "login";
 	}
 	
-	@PostMapping("/join")
-	public String joinMember(Model model) {
-		model.addAttribute("menuBar", "MenuBar");
-		model.addAttribute("result", "loginResult");
-		return "login";
-	}
+
 	
 	@PostMapping("/signin")
 	public String signin(Model model, @RequestParam("shop_id")String id, @RequestParam("shop_pw")String pw) {
@@ -29,6 +24,13 @@ public class MemberController {
 		System.out.println(id);
 		System.out.println(pw);
 		return "index";
+	}
+	
+	@PostMapping("/join")
+	public String joinMember(Model model) {
+		model.addAttribute("menuBar", "MenuBar");
+		model.addAttribute("result", "loginResult");
+		return "login";
 	}
 	
 
